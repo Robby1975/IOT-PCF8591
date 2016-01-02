@@ -19,10 +19,6 @@ Structure Voltage
 End Structure
 
 
-
-
-
-
 Public NotInheritable Class MainPage
     Inherits Page
     Private Const PCF8591_I2C_ADDR As Byte = &H90           ' 7-bit I2C address Of thePFC8591 */
@@ -62,14 +58,10 @@ Public NotInheritable Class MainPage
     End Sub
 
 
-
-
-
-
     Private Function Read_I2C_PCF8591() As Voltage
         Const ADC_RES As Integer = 256                               ' The PF8591 has 8 bit resolution giving 256 unique values                     */
-        Dim RegAddrBuf As Byte() = New Byte() {ADC_Channel3}              ' /* Register address (Channel3) we want To read from                                         */
-        Dim ReadBuf As Byte() = New Byte(2) {}                          ' 
+        Dim RegAddrBuf As Byte() = New Byte() {ADC_Channel3}         ' /* Register address (Channel3) we want To read from                                         */
+        Dim ReadBuf As Byte() = New Byte(2) {}
 
         'Read from the ADC 
         PCF8591.WriteRead(RegAddrBuf, ReadBuf)
