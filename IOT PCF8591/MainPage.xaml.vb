@@ -83,9 +83,7 @@ Public NotInheritable Class MainPage
 
 
     Private Sub TimerCallback(state As Object)
-
         Dim c3Text As String
-
         Dim statusText As String
 
         'Read And format accelerometer data */
